@@ -83,6 +83,7 @@ body {
     background: linear-gradient(135deg, #0a1f0f 0%, #0f2e1a 50%, #0a1f0f 100%);
     overflow: hidden;
     transition: background 0.3s ease;
+    will-change: transform;
 }
 
 body.light-mode .animated-bg {
@@ -98,13 +99,14 @@ body.light-mode .animated-bg {
     background: transparent;
 }
 
-/* Network dots */
+/* Network dots - reduced animation intensity */
 .particle {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-    background: rgba(16, 185, 129, 0.8);
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    background: rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+    will-change: transform;
 }
 
 .particle-1 {
@@ -112,7 +114,7 @@ body.light-mode .animated-bg {
     height: 6px;
     top: 15%;
     left: 10%;
-    animation: floatNetwork 8s ease-in-out infinite;
+    animation: floatNetwork 12s ease-in-out infinite;
 }
 
 .particle-2 {
@@ -120,7 +122,7 @@ body.light-mode .animated-bg {
     height: 8px;
     top: 25%;
     left: 80%;
-    animation: floatNetwork 10s ease-in-out infinite 1s;
+    animation: floatNetwork 14s ease-in-out infinite 1s;
 }
 
 .particle-3 {
@@ -128,7 +130,7 @@ body.light-mode .animated-bg {
     height: 5px;
     top: 45%;
     left: 30%;
-    animation: floatNetwork 12s ease-in-out infinite 2s;
+    animation: floatNetwork 16s ease-in-out infinite 2s;
 }
 
 .particle-4 {
@@ -136,7 +138,7 @@ body.light-mode .animated-bg {
     height: 7px;
     top: 65%;
     left: 70%;
-    animation: floatNetwork 9s ease-in-out infinite 1.5s;
+    animation: floatNetwork 13s ease-in-out infinite 1.5s;
 }
 
 .particle-5 {
@@ -144,7 +146,7 @@ body.light-mode .animated-bg {
     height: 6px;
     top: 80%;
     left: 20%;
-    animation: floatNetwork 11s ease-in-out infinite 0.5s;
+    animation: floatNetwork 15s ease-in-out infinite 0.5s;
 }
 
 .particle-6 {
@@ -152,33 +154,34 @@ body.light-mode .animated-bg {
     height: 8px;
     top: 55%;
     left: 90%;
-    animation: floatNetwork 13s ease-in-out infinite 2.5s;
+    animation: floatNetwork 17s ease-in-out infinite 2.5s;
 }
 
 @keyframes floatNetwork {
     0%, 100% {
         transform: translate(0, 0);
-        opacity: 0.6;
+        opacity: 0.4;
     }
     25% {
-        transform: translate(30px, -30px);
-        opacity: 1;
+        transform: translate(20px, -20px);
+        opacity: 0.7;
     }
     50% {
-        transform: translate(-20px, 40px);
-        opacity: 0.8;
+        transform: translate(-15px, 30px);
+        opacity: 0.5;
     }
     75% {
-        transform: translate(40px, 20px);
-        opacity: 1;
+        transform: translate(30px, 15px);
+        opacity: 0.7;
     }
 }
 
-/* Geometric Shapes */
+/* Geometric Shapes - reduced animation speed */
 .shape {
     position: absolute;
-    opacity: 0.08;
+    opacity: 0.05;
     pointer-events: none;
+    will-change: transform;
 }
 
 .shape-1 {
@@ -188,7 +191,7 @@ body.light-mode .animated-bg {
     border-radius: 50%;
     top: 10%;
     right: 10%;
-    animation: rotate 20s linear infinite;
+    animation: rotate 30s linear infinite;
 }
 
 .shape-2 {
@@ -197,7 +200,7 @@ body.light-mode .animated-bg {
     border: 2px solid #84cc16;
     top: 60%;
     left: 5%;
-    animation: rotate 15s linear infinite reverse;
+    animation: rotate 25s linear infinite reverse;
 }
 
 .shape-3 {
@@ -207,7 +210,7 @@ body.light-mode .animated-bg {
     border-radius: 50%;
     bottom: 20%;
     right: 30%;
-    animation: rotate 25s linear infinite;
+    animation: rotate 35s linear infinite;
 }
 
 @keyframes rotate {
@@ -219,7 +222,7 @@ body.light-mode .animated-bg {
     }
 }
 
-/* Grid Pattern */
+/* Grid Pattern - slower animation */
 .grid-pattern {
     position: absolute;
     top: 0;
@@ -227,10 +230,11 @@ body.light-mode .animated-bg {
     width: 100%;
     height: 100%;
     background-image:
-        linear-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16, 185, 129, 0.08) 1px, transparent 1px);
+        linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
-    animation: gridMove 20s linear infinite;
+    animation: gridMove 30s linear infinite;
+    will-change: transform;
 }
 
 @keyframes gridMove {
