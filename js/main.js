@@ -4,6 +4,7 @@ import FormHandler from './classes/FormHandler.js';
 import ProjectHandler from './classes/ProjectHandler.js';
 import AnimationController from './classes/AnimationController.js';
 import NetworkAnimation from './classes/NetworkAnimation.js';
+import FooterController from './classes/FooterController.js';
 
 // Preload pages on hover
 function preloadPage(url) {
@@ -84,4 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Instantiate Network Animation
     const networkAnimation = new NetworkAnimation();
+
+    // Instantiate Footer Controller
+    const footerController = new FooterController();
 });

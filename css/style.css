@@ -99,119 +99,89 @@ body.light-mode .animated-bg {
     background: transparent;
 }
 
-/* Network dots - reduced animation intensity */
+/* Network dots - optimized, reduced particles */
 .particle {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-    background: rgba(16, 185, 129, 0.6);
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.2);
     will-change: transform;
 }
 
 .particle-1 {
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     top: 15%;
     left: 10%;
-    animation: floatNetwork 12s ease-in-out infinite;
+    animation: floatNetwork 20s ease-in-out infinite;
 }
 
 .particle-2 {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     top: 25%;
     left: 80%;
-    animation: floatNetwork 14s ease-in-out infinite 1s;
+    animation: floatNetwork 22s ease-in-out infinite 1s;
 }
 
 .particle-3 {
-    width: 5px;
-    height: 5px;
-    top: 45%;
-    left: 30%;
-    animation: floatNetwork 16s ease-in-out infinite 2s;
-}
-
-.particle-4 {
-    width: 7px;
-    height: 7px;
+    width: 4px;
+    height: 4px;
     top: 65%;
     left: 70%;
-    animation: floatNetwork 13s ease-in-out infinite 1.5s;
+    animation: floatNetwork 24s ease-in-out infinite 1.5s;
 }
 
-.particle-5 {
-    width: 6px;
-    height: 6px;
-    top: 80%;
-    left: 20%;
-    animation: floatNetwork 15s ease-in-out infinite 0.5s;
-}
-
-.particle-6 {
-    width: 8px;
-    height: 8px;
-    top: 55%;
-    left: 90%;
-    animation: floatNetwork 17s ease-in-out infinite 2.5s;
-}
+/* Removed particle-4, particle-5, particle-6 for performance */
 
 @keyframes floatNetwork {
     0%, 100% {
         transform: translate(0, 0);
-        opacity: 0.4;
+        opacity: 0.3;
     }
     25% {
-        transform: translate(20px, -20px);
-        opacity: 0.7;
-    }
-    50% {
-        transform: translate(-15px, 30px);
+        transform: translate(15px, -15px);
         opacity: 0.5;
     }
+    50% {
+        transform: translate(-10px, 20px);
+        opacity: 0.4;
+    }
     75% {
-        transform: translate(30px, 15px);
-        opacity: 0.7;
+        transform: translate(20px, 10px);
+        opacity: 0.5;
     }
 }
 
-/* Geometric Shapes - reduced animation speed */
+/* Geometric Shapes - optimized, slower animation */
 .shape {
     position: absolute;
-    opacity: 0.05;
+    opacity: 0.03;
     pointer-events: none;
     will-change: transform;
 }
 
 .shape-1 {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border: 2px solid #10b981;
     border-radius: 50%;
     top: 10%;
     right: 10%;
-    animation: rotate 30s linear infinite;
+    animation: rotate 45s linear infinite;
 }
 
 .shape-2 {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border: 2px solid #84cc16;
     top: 60%;
     left: 5%;
-    animation: rotate 25s linear infinite reverse;
+    animation: rotate 40s linear infinite reverse;
 }
 
-.shape-3 {
-    width: 150px;
-    height: 150px;
-    border: 2px solid #065f46;
-    border-radius: 50%;
-    bottom: 20%;
-    right: 30%;
-    animation: rotate 35s linear infinite;
-}
+/* Removed shape-3 for performance */
 
 @keyframes rotate {
     from {
@@ -222,7 +192,7 @@ body.light-mode .animated-bg {
     }
 }
 
-/* Grid Pattern - slower animation */
+/* Grid Pattern - much slower animation, reduced opacity */
 .grid-pattern {
     position: absolute;
     top: 0;
@@ -230,10 +200,10 @@ body.light-mode .animated-bg {
     width: 100%;
     height: 100%;
     background-image:
-        linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
-    animation: gridMove 30s linear infinite;
+    animation: gridMove 60s linear infinite;
     will-change: transform;
 }
 
@@ -319,118 +289,51 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* Button hover effects */
+/* Button hover effects - subtle */
 button {
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-button:hover::before {
-    width: 300px;
-    height: 300px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
 }
 
 button:active {
     transform: translateY(0);
 }
 
-/* Card hover effects */
+/* Card hover effects - subtle only */
 .project-card {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 0.5rem;
-}
-
-.project-card:hover::before {
-    opacity: 1;
 }
 
 .project-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.15);
 }
 
-/* Skill card hover effects */
+/* Skill card hover effects - subtle only */
 .skill-card {
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
 }
 
-.skill-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 2px solid #10b981;
-    border-radius: 0.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.skill-card:hover::after {
-    opacity: 1;
-}
-
 .skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
 }
 
-/* Progress bar animation on hover */
-.skill-card:hover .progress-bar {
-    animation: progressPulse 1s ease-in-out;
-}
-
-@keyframes progressPulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.7;
-    }
-}
-
-/* Image hover effects */
+/* Image hover effects - subtle */
 img {
-    transition: all 0.4s ease;
+    transition: transform 0.2s ease;
 }
 
 img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
+    transform: scale(1.02);
 }
 
 /* Input hover effects */
@@ -444,22 +347,13 @@ input:focus, textarea:focus {
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
-/* Stats counter hover */
+/* Stats counter hover - subtle */
 .stat-item {
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .stat-item:hover {
-    transform: scale(1.1);
-}
-
-.stat-item:hover .stat-number {
-    color: #059669;
-}
-
-/* Link hover glow effect */
-a:hover {
-    text-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+    transform: scale(1.05);
 }
 
 /* Mobile menu animation */
@@ -478,89 +372,10 @@ a:hover {
     }
 }
 
-/* Bounce animation for badges */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.project-card span {
-    animation: bounce 2s ease-in-out infinite;
-}
-
-/* Glow pulse animation */
-@keyframes glowPulse {
-    0%, 100% {
-        box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(16, 185, 129, 0.8), 0 0 30px rgba(132, 204, 22, 0.4);
-    }
-}
-
-.skill-card:hover {
-    animation: glowPulse 2s ease-in-out infinite;
-}
-
-/* Shake animation for buttons */
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-}
-
-button:active {
-    animation: shake 0.3s ease-in-out;
-}
-
-/* Rotate on hover for icons */
-.learning-icon {
-    transition: transform 0.5s ease;
-}
-
-.learning-icon:hover {
-    transform: rotate(360deg);
-}
-
-/* Slide in from left animation */
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Slide in from right animation */
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Apply animations on scroll */
-.animate-on-scroll {
-    opacity: 0;
-}
-
-.animate-on-scroll.visible {
-    animation: slideInLeft 0.8s ease forwards;
-}
-
-.animate-on-scroll-right.visible {
-    animation: slideInRight 0.8s ease forwards;
+/* Scroll animations disabled - elements appear immediately */
+.animate-on-scroll,
+.animate-on-scroll-right {
+    opacity: 1;
 }
 
 /* Text gradient animation */
@@ -582,20 +397,6 @@ button:active {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientText 3s ease infinite;
-}
-
-/* Floating animation for learning cards */
-@keyframes floatCard {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.learning-card:hover {
-    animation: floatCard 2s ease-in-out infinite;
 }
 
 /* Ripple effect */

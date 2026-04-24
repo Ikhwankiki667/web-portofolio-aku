@@ -1,0 +1,11 @@
+# robots.txt for Muhammad Ikhwan Fitoriqillah Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yourwebsite.com/sitemap.xml
+
+# Disallow admin or private directories (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
