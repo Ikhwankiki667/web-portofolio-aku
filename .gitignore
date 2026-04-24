@@ -1,0 +1,12 @@
+# Mengabaikan folder dan file sistem
+.DS_Store
+Thumbs.db
+
+# Mengabaikan file yang biasanya berisi password/API key
+.env
+.env.local
+
+# Mengabaikan folder node_modules (jika kamu pakai Node.js kedepannya)
+node_modules/
+.agents/
+.claude/
