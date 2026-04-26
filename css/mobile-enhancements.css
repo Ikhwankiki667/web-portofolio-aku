@@ -4,7 +4,12 @@
 @media (max-width: 768px) {
     .min-h-screen.flex.items-center {
         min-height: calc(100vh - 56px);
-        padding-top: 56px;
+        padding-top: 80px !important;
+    }
+
+    /* Add padding to all sections to prevent navbar overlap */
+    section {
+        scroll-margin-top: 70px;
     }
 
     /* Hero grid - stack on mobile */
