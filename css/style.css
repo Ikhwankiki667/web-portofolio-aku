@@ -484,6 +484,7 @@ input:focus, textarea:focus {
         padding: 14px 24px !important;
         font-size: 16px !important;
         border-radius: 8px !important;
+        touch-action: manipulation;
     }
 
     /* Navigation links */
@@ -494,6 +495,7 @@ input:focus, textarea:focus {
         min-height: 48px !important;
         display: flex !important;
         align-items: center !important;
+        touch-action: manipulation;
     }
 
     /* Mobile menu button */
@@ -504,6 +506,7 @@ input:focus, textarea:focus {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        touch-action: manipulation;
     }
 
     /* Form inputs */
@@ -514,6 +517,7 @@ input:focus, textarea:focus {
         font-size: 16px !important; /* Prevents zoom on iOS */
         padding: 14px 16px !important;
         border-radius: 8px !important;
+        touch-action: manipulation;
     }
 
     textarea {
@@ -526,12 +530,32 @@ input:focus, textarea:focus {
         min-height: 48px !important;
         padding: 12px 20px !important;
         font-size: 15px !important;
+        touch-action: manipulation;
     }
 
     /* Tech stack items */
     .tech-stack-item {
         min-height: 100px !important;
         padding: 12px !important;
+        touch-action: manipulation;
+    }
+
+    /* Social media icons - bigger touch targets */
+    .flex.space-x-4 a,
+    footer a {
+        min-width: 48px !important;
+        min-height: 48px !important;
+        padding: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        touch-action: manipulation;
+    }
+
+    .flex.space-x-4 a svg,
+    footer a svg {
+        width: 24px !important;
+        height: 24px !important;
     }
 }
 

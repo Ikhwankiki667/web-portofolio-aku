@@ -1,0 +1,94 @@
+/* Mobile Optimization - Touch Active State */
+.touch-active {
+    opacity: 0.8 !important;
+    transform: scale(0.98) !important;
+}
+
+/* Prevent layout shift */
+:root {
+    --scrollbar-width: 0px;
+}
+
+body {
+    padding-right: var(--scrollbar-width);
+}
+
+/* Notched device support */
+html.has-notch {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+html.has-notch nav {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+/* Fonts loaded optimization */
+html.fonts-loaded {
+    font-display: swap;
+}
+
+/* Low speed connection optimization */
+html.low-speed * {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* High speed connection - enable animations */
+html.high-speed {
+    /* Animations already enabled by default */
+}
+
+/* Smooth scrolling for supported browsers */
+@supports (scroll-behavior: smooth) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Better focus visible for keyboard navigation */
+:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Remove outline for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Improve button states */
+button:active {
+    background-color: #1D4ED8;
+}
+
+/* Better link states */
+a:visited {
+    color: #8B5CF6;
+}
+
+/* Improve form input states */
+input:invalid,
+textarea:invalid {
+    border-color: #EF4444;
+}
+
+input:valid,
+textarea:valid {
+    border-color: #22C55E;
+}
+
+/* Optimize for print */
+@media print {
+    .animated-bg,
+    nav,
+    footer {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}

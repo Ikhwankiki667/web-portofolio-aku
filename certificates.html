@@ -10,7 +10,21 @@
     <meta name="mobile-web-app-capable" content="yes">
     <title>Muhammad Ikhwan Fitoriqillah - Sertifikat</title>
     <meta name="description" content="Sertifikat dan penghargaan Muhammad Ikhwan Fitoriqillah dari berbagai pelatihan dan kompetisi, termasuk Big Fair, ITDS Insight, dan Surabaya Innovation Camp.">
+
+    <!-- PWA Meta Tags -->
+    <meta name="application-name" content="Portfolio Ikhwan">
+    <meta name="msapplication-TileColor" content="#0B0F19">
+    <meta name="msapplication-config" content="./browserconfig.xml">
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="./css/style.css" as="style">
+    <link rel="preload" href="./css/mobile-enhancements.css" as="style">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="apple-touch-icon" href="./images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,6 +38,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/mobile-enhancements.css">
+    <link rel="stylesheet" href="./css/touch-optimization.css">
 </head>
 <body class="bg-[#0B0F19] text-gray-100">
     <!-- Animated Background -->
@@ -193,6 +208,7 @@
         </div>
     </footer>
 
+    <script src="./js/mobile-optimization.js"></script>
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>

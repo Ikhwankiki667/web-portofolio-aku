@@ -14,6 +14,23 @@
     <meta name="author" content="Muhammad Ikhwan Fitoriqillah">
     <meta name="robots" content="index, follow">
 
+    <!-- PWA Meta Tags -->
+    <meta name="application-name" content="Portfolio Ikhwan">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Portfolio">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0B0F19">
+    <meta name="msapplication-TileColor" content="#0B0F19">
+    <meta name="msapplication-config" content="./browserconfig.xml">
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="./css/style.css" as="style">
+    <link rel="preload" href="./css/mobile-enhancements.css" as="style">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourwebsite.com/">
@@ -27,6 +44,7 @@
     <meta property="twitter:description" content="Portfolio Muhammad Ikhwan Fitoriqillah - Mahasiswa Sains Data Terapan PENS. Spesialisasi dalam Machine Learning, Data Analysis, UI/UX Design, dan Digital Marketing.">
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="apple-touch-icon" href="./images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,6 +58,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/mobile-enhancements.css">
+    <link rel="stylesheet" href="./css/touch-optimization.css">
 </head>
 <body class="bg-[#0B0F19] text-gray-100">
     <!-- Animated Background -->
@@ -120,7 +139,7 @@
                     </a>
                 </div>
                 <div class="flex justify-center">
-                    <img src="./images/belajar-pakai-laptop.png" alt="Ilustrasi Muhammad Ikhwan Fitoriqillah sedang bekerja dengan laptop, fokus pada proyek data science" class="max-w-full h-auto rounded-lg" loading="lazy">
+                    <img src="./images/belajar-pakai-laptop.png" alt="Ilustrasi Muhammad Ikhwan Fitoriqillah sedang bekerja dengan laptop, fokus pada proyek data science" class="max-w-full h-auto rounded-lg" loading="lazy" width="600" height="600">
                 </div>
             </div>
         </div>
@@ -162,6 +181,7 @@
         </div>
     </footer>
 
+    <script src="./js/mobile-optimization.js"></script>
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>
