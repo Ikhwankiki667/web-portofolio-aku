@@ -44,13 +44,15 @@ class ProjectHandler {
 
             if (buttons.length > 0 && this.projects[index]) {
                 // First button is always "Kode" (GitHub)
-                buttons[0].addEventListener('click', () => {
+                buttons[0].addEventListener('click', (e) => {
+                    e.preventDefault();
                     this.openLink(this.projects[index].github, 'GitHub');
                 });
 
                 // Second button (if exists) is "Demo"
                 if (buttons.length > 1) {
-                    buttons[1].addEventListener('click', () => {
+                    buttons[1].addEventListener('click', (e) => {
+                        e.preventDefault();
                         this.openLink(this.projects[index].demo, 'Demo');
                     });
                 }

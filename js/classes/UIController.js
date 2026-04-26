@@ -14,6 +14,77 @@ class UIController {
         this.setupSmoothScroll();
         this.setupScrollEffects();
         this.setupCTAButtons();
+        this.setupMobileOptimizations();
+    }
+
+    setupMobileOptimizations() {
+        // Detect mobile device
+        this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if (this.isMobile) {
+            // Add mobile class to body
+            document.body.classList.add('is-mobile');
+
+            // Setup lazy loading for images
+            this.setupLazyLoading();
+
+            // Optimize touch events
+            this.setupTouchOptimizations();
+
+            // Prevent zoom on double tap
+            this.preventDoubleTabZoom();
+        }
+    }
+
+    setupLazyLoading() {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+    }
+
+    setupTouchOptimizations() {
+        // Add touch feedback to interactive elements
+        const interactiveElements = document.querySelectorAll('button, a, .project-card, .skill-card, .tech-stack-item');
+
+        interactiveElements.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.opacity = '0.7';
+            }, { passive: true });
+
+            element.addEventListener('touchend', function() {
+                this.style.opacity = '1';
+            }, { passive: true });
+
+            element.addEventListener('touchcancel', function() {
+                this.style.opacity = '1';
+            }, { passive: true });
+        });
+    }
+
+    preventDoubleTabZoom() {
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', (event) => {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, { passive: false });
     }
 
     setupThemeToggle() {

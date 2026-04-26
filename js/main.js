@@ -5,6 +5,7 @@ import ProjectHandler from './classes/ProjectHandler.js';
 import AnimationController from './classes/AnimationController.js';
 import NetworkAnimation from './classes/NetworkAnimation.js';
 import FooterController from './classes/FooterController.js';
+import TechStackController from './classes/TechStackController.js';
 
 // Preload pages on hover
 function preloadPage(url) {
@@ -53,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initPageTransitions();
 
     // Easter Egg - Console Message
-    console.log('%cEASTER EGG FOUND!', 'color: #10b981; font-size: 20px; font-weight: bold;');
-    console.log('%cAslinya aku mau masuk ITS, cuman gak keterima aaokwokoakwok 😂', 'color: #84cc16; font-size: 16px;');
-    console.log('%cTapi Alhamdulillah sekarang di PENS', 'color: #10b981; font-size: 14px;');
+    console.log('%cEASTER EGG FOUND!', 'color: #3B82F6; font-size: 20px; font-weight: bold;');
+    console.log('%cAslinya aku mau masuk ITS, cuman gak keterima aaokwokoakwok 😂', 'color: #60A5FA; font-size: 16px;');
+    console.log('%cTapi Alhamdulillah sekarang di PENS', 'color: #3B82F6; font-size: 14px;');
 
     // Easter Egg - Logo Click Counter
     let clickCount = 0;
@@ -88,4 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Instantiate Footer Controller
     const footerController = new FooterController();
+
+    // Instantiate Tech Stack Controller
+    const techStackController = new TechStackController();
 });

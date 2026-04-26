@@ -128,6 +128,13 @@ class FormHandler {
             }
         });
 
+        // Also validate captcha
+        const captchaInput = document.getElementById('captcha');
+        if (captchaInput && captchaInput.value.trim() === '') {
+            this.showError(captchaInput, 'Jawaban captcha harus diisi');
+            isValid = false;
+        }
+
         return isValid;
     }
 
