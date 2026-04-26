@@ -20,12 +20,10 @@ document.addEventListener('touchstart', function() {
     // Trigger active state immediately on touch
 }, { passive: true });
 
-// Prevent double-tap zoom on buttons and links
+// Remove preventDefault that blocks clicks - let clicks work naturally
 document.addEventListener('touchend', function(e) {
-    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
-        e.preventDefault();
-    }
-}, { passive: false });
+    // Don't prevent default - let natural click behavior work
+}, { passive: true });
 
 // Optimize image loading for mobile
 if (isMobile()) {
