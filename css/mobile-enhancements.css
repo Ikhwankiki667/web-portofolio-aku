@@ -1,0 +1,328 @@
+/* Additional Mobile Enhancements */
+
+/* Hero Section Mobile Optimization */
+@media (max-width: 768px) {
+    .min-h-screen.flex.items-center {
+        min-height: calc(100vh - 56px);
+        padding-top: 56px;
+    }
+
+    /* Hero grid - stack on mobile */
+    .grid.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Hero image */
+    .grid.md\:grid-cols-2 img {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    /* Social icons spacing */
+    .flex.space-x-4 {
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .flex.space-x-4 a {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* About Page Mobile */
+@media (max-width: 768px) {
+    /* Stats grid - keep 3 columns but smaller */
+    .grid.grid-cols-3.gap-6 {
+        gap: 0.75rem;
+    }
+
+    .stat-item {
+        padding: 0.5rem;
+    }
+
+    .stat-item .text-sm {
+        font-size: 0.75rem;
+    }
+
+    /* Skills bento grid */
+    .grid.grid-cols-1.md\:grid-cols-4 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Tech stack grid - 3 columns on mobile */
+    .grid.grid-cols-2.md\:grid-cols-4.lg\:grid-cols-6 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+
+    .tech-stack-item {
+        padding: 0.75rem;
+    }
+
+    .tech-stack-item svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .tech-stack-item span {
+        font-size: 0.75rem;
+    }
+}
+
+/* Projects Page Mobile */
+@media (max-width: 768px) {
+    .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .project-card {
+        margin-bottom: 0;
+    }
+
+    .project-card .h-48 {
+        height: 180px;
+    }
+
+    .project-card h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+}
+
+/* Timeline Mobile */
+@media (max-width: 768px) {
+    /* Hide timeline line on mobile */
+    .absolute.left-1\/2.transform.-translate-x-1\/2.w-1 {
+        display: none;
+    }
+
+    /* Timeline items full width */
+    .relative.flex.items-center {
+        display: block;
+    }
+
+    .md\:w-1\/2 {
+        width: 100%;
+        padding: 0;
+        text-align: left;
+    }
+
+    /* Timeline dots */
+    .absolute.left-1\/2.transform.-translate-x-1\/2.w-4.h-4 {
+        display: none;
+    }
+
+    /* Timeline cards */
+    .bg-\[\#111827\].p-6.rounded-lg {
+        padding: 1rem;
+    }
+
+    /* Achievement badges */
+    .bg-blue-500\/10.px-3.py-2 {
+        padding: 0.5rem 0.75rem;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .bg-blue-500\/10.px-3.py-2 p {
+        font-size: 0.8125rem;
+    }
+}
+
+/* Learning Section Mobile */
+@media (max-width: 768px) {
+    .grid.md\:grid-cols-2.gap-8 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .learning-card {
+        padding: 1rem;
+    }
+
+    .learning-icon {
+        padding: 0.625rem;
+    }
+
+    .learning-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .learning-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .learning-card p {
+        font-size: 0.8125rem;
+        margin-bottom: 0.625rem;
+    }
+}
+
+/* Fun Facts Mobile */
+@media (max-width: 768px) {
+    .grid.md\:grid-cols-2.lg\:grid-cols-3.gap-6 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Fun fact cards */
+    .bg-\[\#0B0F19\].p-6.rounded-lg {
+        padding: 1rem;
+    }
+
+    .bg-\[\#0B0F19\].p-6.rounded-lg svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .bg-\[\#0B0F19\].p-6.rounded-lg h3 {
+        font-size: 1rem;
+    }
+
+    .bg-\[\#0B0F19\].p-6.rounded-lg p {
+        font-size: 0.875rem;
+    }
+
+    /* Quote card - full width */
+    .md\:col-span-2 {
+        grid-column: span 1;
+    }
+}
+
+/* Contact Form Mobile */
+@media (max-width: 768px) {
+    form {
+        padding: 0;
+    }
+
+    label {
+        font-size: 0.9375rem;
+        margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 16px;
+        padding: 14px 16px;
+    }
+
+    /* Captcha section */
+    .captcha-section {
+        padding: 1rem;
+    }
+
+    .captcha-section p {
+        font-size: 0.9375rem;
+    }
+}
+
+/* Certificates Page Mobile */
+@media (max-width: 768px) {
+    .certificate-card {
+        padding: 1rem;
+    }
+
+    .certificate-card img {
+        height: 160px;
+        object-fit: cover;
+    }
+
+    .certificate-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .certificate-card p {
+        font-size: 0.8125rem;
+    }
+}
+
+/* Improved scrollbar for mobile */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+    }
+}
+
+/* Loading states for images */
+@media (max-width: 768px) {
+    img[loading="lazy"] {
+        background: linear-gradient(90deg, #111827 0%, #1f2937 50%, #111827 100%);
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
+        }
+    }
+}
+
+/* Fix for iOS Safari bottom bar */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 768px) {
+        .min-h-screen {
+            min-height: -webkit-fill-available;
+        }
+
+        html {
+            height: -webkit-fill-available;
+        }
+    }
+}
+
+/* Tablet optimization (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .max-w-7xl {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    /* Grid adjustments for tablet */
+    .grid.md\:grid-cols-2 {
+        gap: 2rem;
+    }
+
+    .grid.md\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid.lg\:grid-cols-6 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
