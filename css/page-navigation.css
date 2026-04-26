@@ -15,25 +15,29 @@
     gap: 0.5rem;
     padding: 12px 24px;
     background: #3B82F6;
-    color: white;
+    color: white !important;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     min-height: 48px;
     touch-action: manipulation;
 }
 
-.nav-button:hover {
+.nav-button:visited {
+    color: white !important;
+}
+
+.nav-button:hover:not(.disabled) {
     background: #60A5FA;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.nav-button:active {
+.nav-button:active:not(.disabled) {
     transform: translateY(0);
     background: #1D4ED8;
 }
@@ -47,6 +51,11 @@
 .nav-button svg {
     width: 20px;
     height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.nav-button:hover:not(.disabled) svg {
+    transform: scale(1.1);
 }
 
 .nav-spacer {
@@ -67,6 +76,7 @@
         min-width: 120px;
         padding: 14px 16px;
         font-size: 0.9375rem;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .nav-spacer {

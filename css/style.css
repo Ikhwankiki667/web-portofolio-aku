@@ -235,7 +235,26 @@ body.light-mode .animated-bg {
 }
 
 /* Smooth transitions */
-a, button {
+a, button, img, .project-card, .skill-card, .tech-stack-item, .stat-item {
+    transition: all 0.3s ease;
+}
+
+a:not(.nav-button):not([class*="inline-block"]) {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+button,
+a.inline-block,
+.nav-button {
+    transition: all 0.3s ease;
+}
+
+/* Ensure all interactive elements have smooth transitions */
+nav a,
+footer a,
+.hover-lift,
+.learning-card,
+.learning-icon {
     transition: all 0.3s ease;
 }
 
@@ -290,6 +309,11 @@ body.light-mode ::-webkit-scrollbar-track {
 nav a {
     position: relative;
     transition: color 0.3s ease;
+    color: inherit;
+}
+
+nav a:visited {
+    color: inherit;
 }
 
 nav a::after {
@@ -308,28 +332,31 @@ nav a:hover::after {
 }
 
 /* Button hover effects - subtle */
-button {
+button,
+a.inline-block {
     position: relative;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     background: #3B82F6;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
-button:hover {
+button:hover,
+a.inline-block:hover {
     transform: translateY(-1px);
     background: #60A5FA;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-button:active {
+button:active,
+a.inline-block:active {
     transform: translateY(0);
 }
 
 /* Card hover effects - subtle only */
 .project-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
     background: #111827;
     backdrop-filter: blur(10px);
@@ -344,7 +371,7 @@ button:active {
 
 /* Skill card hover effects - subtle only */
 .skill-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
     background: #111827;
     backdrop-filter: blur(10px);
@@ -359,7 +386,7 @@ button:active {
 
 /* Image hover effects - subtle */
 img {
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
 }
 
 img:hover {
@@ -379,7 +406,7 @@ input:focus, textarea:focus {
 
 /* Stats counter hover - subtle */
 .stat-item {
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
 }
 
 .stat-item:hover {
@@ -463,9 +490,15 @@ input:focus, textarea:focus {
         display: none;
     }
 
-    /* Faster transitions */
-    * {
-        transition-duration: 0.2s !important;
+    /* Keep transitions for interactive elements */
+    button,
+    a,
+    nav a,
+    .nav-button,
+    .project-card,
+    .skill-card,
+    .tech-stack-item {
+        transition-duration: 0.3s !important;
     }
 
     /* Optimize scroll behavior */

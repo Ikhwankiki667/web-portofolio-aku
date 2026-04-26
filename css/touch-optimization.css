@@ -30,9 +30,20 @@ html.fonts-loaded {
 }
 
 /* Low speed connection optimization */
-html.low-speed * {
+html.low-speed .animated-bg,
+html.low-speed .grid-pattern,
+html.low-speed .shape,
+html.low-speed .particle {
     animation: none !important;
-    transition: none !important;
+}
+
+/* Keep transitions for interactive elements even on low speed */
+html.low-speed button,
+html.low-speed a,
+html.low-speed .nav-button,
+html.low-speed .project-card,
+html.low-speed .skill-card {
+    transition: all 0.3s ease !important;
 }
 
 /* High speed connection - enable animations */
@@ -63,9 +74,9 @@ button:active {
     background-color: #1D4ED8;
 }
 
-/* Better link states */
-a:visited {
-    color: #8B5CF6;
+/* Better link states - exclude social icons and navigation */
+a:visited:not(.text-gray-400):not([class*="nav-button"]) {
+    color: inherit;
 }
 
 /* Improve form input states */

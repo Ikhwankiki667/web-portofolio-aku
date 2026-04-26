@@ -1,0 +1,153 @@
+/* Learning Section Animations */
+
+/* Learning card hover effect */
+.learning-card {
+    transition: all 0.3s ease;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.6) !important;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
+
+/* Learning icon animations */
+.learning-icon {
+    transition: all 0.3s ease;
+}
+
+.learning-icon svg {
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Float animation for icons */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Glow effect on hover */
+.learning-card:hover .learning-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
+}
+
+.learning-card:hover .learning-icon svg {
+    animation: float 2s ease-in-out infinite, pulse-glow 2s ease-in-out infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.8));
+    }
+}
+
+/* Rotate animation for lightning icon */
+.learning-card:nth-child(1) .learning-icon svg {
+    animation: float 3s ease-in-out infinite, rotate-icon 4s linear infinite;
+}
+
+.learning-card:nth-child(1):hover .learning-icon svg {
+    animation: float 2s ease-in-out infinite, pulse-glow 2s ease-in-out infinite, rotate-icon 2s linear infinite;
+}
+
+/* Bounce animation for figma icon */
+.learning-card:nth-child(2) .learning-icon svg {
+    animation: float 3.2s ease-in-out infinite, bounce-icon 2s ease-in-out infinite;
+}
+
+.learning-card:nth-child(2):hover .learning-icon svg {
+    animation: float 2s ease-in-out infinite, pulse-glow 2s ease-in-out infinite, bounce-icon 1s ease-in-out infinite;
+}
+
+/* Spin animation for lightning bolt icon */
+.learning-card:nth-child(3) .learning-icon svg {
+    animation: float 2.8s ease-in-out infinite, spin-icon 3s linear infinite;
+}
+
+.learning-card:nth-child(3):hover .learning-icon svg {
+    animation: float 2s ease-in-out infinite, pulse-glow 2s ease-in-out infinite, spin-icon 1.5s linear infinite;
+}
+
+/* Rotate icon animation */
+@keyframes rotate-icon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Bounce icon animation */
+@keyframes bounce-icon {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.2);
+    }
+}
+
+/* Spin icon animation */
+@keyframes spin-icon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/* Progress bar animation */
+.learning-card .bg-gray-700 {
+    transition: all 0.3s ease;
+}
+
+.learning-card:hover .bg-gray-700 {
+    background-color: rgba(55, 65, 81, 0.8);
+}
+
+.learning-card .bg-blue-400,
+.learning-card .bg-blue-500 {
+    transition: all 0.3s ease;
+    animation: progress-fill 2s ease-in-out infinite;
+}
+
+@keyframes progress-fill {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.learning-card:hover .bg-blue-400,
+.learning-card:hover .bg-blue-500 {
+    animation: progress-fill 1s ease-in-out infinite;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .learning-icon svg {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .learning-card:active .learning-icon {
+        transform: scale(1.05);
+    }
+
+    .learning-card:active .learning-icon svg {
+        animation: float 2s ease-in-out infinite, pulse-glow 2s ease-in-out infinite;
+    }
+}

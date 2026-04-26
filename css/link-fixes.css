@@ -1,0 +1,90 @@
+/* Fix for social icons and navigation links */
+
+/* Social media icons - prevent visited color change */
+footer a,
+.flex.space-x-4 a,
+.flex.space-x-6 a {
+    color: #9CA3AF !important;
+    transition: color 0.3s ease, transform 0.3s ease !important;
+}
+
+footer a:visited,
+.flex.space-x-4 a:visited,
+.flex.space-x-6 a:visited {
+    color: #9CA3AF !important;
+}
+
+footer a:hover,
+.flex.space-x-4 a:hover,
+.flex.space-x-6 a:hover {
+    color: #3B82F6 !important;
+    transform: scale(1.1);
+}
+
+/* Navigation links - prevent visited color change */
+nav a {
+    color: inherit !important;
+    transition: color 0.3s ease !important;
+}
+
+nav a:visited {
+    color: inherit !important;
+}
+
+nav a.text-blue-500 {
+    color: #3B82F6 !important;
+}
+
+nav a.text-blue-500:visited {
+    color: #3B82F6 !important;
+}
+
+nav a:hover {
+    color: #60A5FA !important;
+}
+
+/* Page navigation buttons */
+.nav-button {
+    color: white !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-button:visited {
+    color: white !important;
+}
+
+.nav-button:hover {
+    color: white !important;
+    background-color: #60A5FA !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+.nav-button:active {
+    transform: translateY(0) !important;
+}
+
+/* CTA Button - Mulai Sekarang */
+a.inline-block.bg-blue-500 {
+    display: inline-block;
+    background-color: #3B82F6;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease !important;
+}
+
+a.inline-block.bg-blue-500:visited {
+    color: white !important;
+}
+
+a.inline-block.bg-blue-500:hover {
+    background-color: #60A5FA !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+a.inline-block.bg-blue-500:active {
+    transform: translateY(0) !important;
+    background-color: #1D4ED8 !important;
+}

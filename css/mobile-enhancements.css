@@ -15,7 +15,7 @@
 
     /* Hero image */
     .grid.md\:grid-cols-2 img {
-        max-width: 280px;
+        max-width: 240px;
         margin: 0 auto;
     }
 
@@ -419,17 +419,6 @@
 
     .grid.lg\:grid-cols-6 {
         grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Performance: Reduce animations on low-end devices */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
     }
 }
 
